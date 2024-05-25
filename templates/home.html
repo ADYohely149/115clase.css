@@ -1,6 +1,18 @@
 {% extends "_base.html" %}
 
 {% block content %}
+   {% if user.is_autentificated %}
+      epale{{ user.username }}!
+      <form action="{% url 'logout'%}" method="post">{% csrf_token %}
+        <button type="submit"> log out</button>
+
+      </form>
+      <p><a href="">log out</a></p>
+   {% else %}
+       <p>no estas registrado</p>
+       <a href="{% url 'login' %}">log in</a>
+  {% endif %}
+
   {% for post in post_list %}
     <ul>
         <li><a href="{% url 'post_det' post.pk %}">{{ post.title }}</a></li>
