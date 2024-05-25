@@ -18,3 +18,4 @@ class Post(models.Model):
         return reverse ("home")
     #reverse("post_detail", args=[str(self.id)])
     
+    
