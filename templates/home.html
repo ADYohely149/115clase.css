@@ -11,6 +11,7 @@
    {% else %}
        <p>no estas registrado</p>
        <a href="{% url 'login' %}">log in</a>
+       <a href="{% url 'singup' %}">sing up</a>
   {% endif %}
 
   {% for post in post_list %}
